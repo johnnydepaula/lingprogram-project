@@ -1,12 +1,13 @@
 import java.time.LocalDate;
+import java.time.YearMonth;
 
 public class Contrato {
     private Cliente cliente;
     private Servico servico;
     private Funcionario funcionarioResponsavel;
     private String ordemContratoServico;
-    private int anoContrato;
-    private int mesContrato;
+    private static int anoContrato;
+    private static int mesContrato;
     private String codigoContrato;
     private static int count = 0;
 
@@ -18,10 +19,10 @@ public class Contrato {
         this.funcionarioResponsavel = funcionarioResponsavel;
 
         LocalDate dataAtual = LocalDate.now();
-        this.anoContrato = dataAtual.getYear();
-        this.mesContrato = dataAtual.getMonthValue();
+        anoContrato = dataAtual.getYear();
+        mesContrato = dataAtual.getMonthValue();
 
-        if (this.anoContrato == dataAtual.getYear()) {
+        if (anoContrato == dataAtual.getYear()) {
             count++;
         } else {
             count = 1;

@@ -3,6 +3,8 @@ public class Cliente {
     private String sobrenome;
     private String email;
     private Boolean sexo;
+    private String codCliente;
+    private static int numCodCliente = 0;
 
 
     public Cliente(String nome, String sobrenome, String email, boolean sexo){
@@ -10,6 +12,9 @@ public class Cliente {
         this.sobrenome = sobrenome;
         this.email = email;
         this.sexo = sexo;
+
+        numCodCliente++;
+        codCliente = "C"+numCodCliente;
     }
 
     // Gets e Sets
@@ -43,5 +48,20 @@ public class Cliente {
 
     public void setSexo(Boolean sexo) {
         this.sexo = sexo;
+    }
+    public String getCodCliente() {
+        return codCliente;
+    }
+
+    public void setCodCliente(String codCliente) {
+        this.codCliente = codCliente;
+    }
+
+    public static int getNumCodCliente() {
+        return numCodCliente;
+    }
+
+    public static void setNumCodCliente(int numCodCliente) {
+        Cliente.numCodCliente = numCodCliente;
     }
 }

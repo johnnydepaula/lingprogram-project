@@ -3,11 +3,16 @@ public class Funcionario {
     private String sobrenome;
     private String email;
     private Boolean sexo;
+    private String codFuncionario;
+    private static int numCodFuncionario = 0;
     public Funcionario(String nome, String sobrenome, String email, boolean sexo){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
         this.sexo = sexo;
+
+        numCodFuncionario++;
+        codFuncionario = "F"+numCodFuncionario;
     }
 
     // Gets e Sets
@@ -41,5 +46,20 @@ public class Funcionario {
 
     public void setSexo(Boolean sexo) {
         this.sexo = sexo;
+    }
+    public String getCodFuncionario() {
+        return codFuncionario;
+    }
+
+    public void setCodFuncionario(String codFuncionario) {
+        this.codFuncionario = codFuncionario;
+    }
+
+    public static int getNumCodFuncionario() {
+        return numCodFuncionario;
+    }
+
+    public static void setNumCodFuncionario(int numCodFuncionario) {
+        Funcionario.numCodFuncionario = numCodFuncionario;
     }
 }
