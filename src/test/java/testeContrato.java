@@ -1,4 +1,4 @@
-package test;
+package test.java;
 import main.java.com.lingprogram.*;
 
 public class testeContrato {
