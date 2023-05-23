@@ -1,5 +1,6 @@
+package main.java.com.lingprogram;
+
 import java.time.LocalDate;
-import java.time.YearMonth;
 
 public class Contrato {
     private Cliente cliente;
@@ -32,8 +33,8 @@ public class Contrato {
 
     // Método para obter descriçao da instacia/objeto
     public String descreveContrato() {
-        return "\nCliente: " + cliente.getNome() + " " + cliente.getSobrenome() + " – Servico: " + servico.getDescricao() +
-                "\nFuncionario responsavel: " + funcionarioResponsavel.getNome() + " " + funcionarioResponsavel.getSobrenome() +
+        return "\nmain.java.com.lingprogram.Cliente: " + cliente.getNome() + " " + cliente.getSobrenome() + " – main.java.com.lingprogram.Servico: " + servico.getDescricao() +
+                "\nmain.java.com.lingprogram.Funcionario responsavel: " + funcionarioResponsavel.getNome() + " " + funcionarioResponsavel.getSobrenome() +
                 "\nAno do contrato: " + getAnoContrato() +
                 "\nMes do contrato: " + getMesContrato() +
                 "\nCodigo do contrato: " + getCodigoContrato();

@@ -1,3 +1,5 @@
+package main.java.com.lingprogram;
+
 public class Servico {
     private String descricao;
     private double valorCobradoHoraServico;
@@ -5,7 +7,7 @@ public class Servico {
     private int horasTrabalhadas;
 
 
-    // Codigo do Servico
+    // Codigo do main.java.com.lingprogram.Servico
     private String codServico;
     private static int numCodServico = 0;
 
@@ -19,6 +21,7 @@ public class Servico {
         codServico = "S"+numCodServico;
     }
 
+    // getters & setters
     public String getDescricao() {
         return descricao;
     }
@@ -65,6 +68,14 @@ public class Servico {
 
     public static void setNumCodServico(int numCodServico) {
         Servico.numCodServico = numCodServico;
+    }
+
+    public double calculaOrcamentoServico(Servico servico){
+        return servico.getValorCobradoHoraServico()*servico.getHorasPrevistas();
+    }
+
+    public double calculaValorPagoServico(Servico servico){
+        return servico.getValorCobradoHoraServico()*getHorasTrabalhadas();
     }
 }
 

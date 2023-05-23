@@ -1,8 +1,9 @@
+package main.java.com.lingprogram;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Historico {
-    private List<Contrato> contratos;
+    private static ArrayList<Contrato> contratos;
 
     public Historico(){
         contratos = new ArrayList<>();
@@ -12,7 +13,7 @@ public class Historico {
         contratos.add(contrato);
     }
 
-    public List<Contrato> getContratos(){
-        return contratos;
+    public String detalhaContrato(){
+        return contratos.toString();
     }
 }

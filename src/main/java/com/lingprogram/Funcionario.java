@@ -1,20 +1,20 @@
-public class Cliente {
+package main.java.com.lingprogram;
+
+public class Funcionario {
     private String nome;
     private String sobrenome;
     private String email;
     private Boolean sexo;
-    private String codCliente;
-    private static int numCodCliente = 0;
-
-
-    public Cliente(String nome, String sobrenome, String email, boolean sexo){
+    private String codFuncionario;
+    private static int numCodFuncionario = 0;
+    public Funcionario(String nome, String sobrenome, String email, boolean sexo){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
         this.sexo = sexo;
 
-        numCodCliente++;
-        codCliente = "C"+numCodCliente;
+        numCodFuncionario++;
+        codFuncionario = "F"+numCodFuncionario;
     }
 
     // Gets e Sets
@@ -49,19 +49,19 @@ public class Cliente {
     public void setSexo(Boolean sexo) {
         this.sexo = sexo;
     }
-    public String getCodCliente() {
-        return codCliente;
+    public String getCodFuncionario() {
+        return codFuncionario;
     }
 
-    public void setCodCliente(String codCliente) {
-        this.codCliente = codCliente;
+    public void setCodFuncionario(String codFuncionario) {
+        this.codFuncionario = codFuncionario;
     }
 
-    public static int getNumCodCliente() {
-        return numCodCliente;
+    public static int getNumCodFuncionario() {
+        return numCodFuncionario;
     }
 
-    public static void setNumCodCliente(int numCodCliente) {
-        Cliente.numCodCliente = numCodCliente;
+    public static void setNumCodFuncionario(int numCodFuncionario) {
+        Funcionario.numCodFuncionario = numCodFuncionario;
     }
 }
