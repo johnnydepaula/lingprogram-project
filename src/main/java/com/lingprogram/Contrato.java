@@ -11,6 +11,7 @@ public class Contrato {
     private static int mesContrato;
     private String codigoContrato;
     private static int count = 0;
+    private Historico historico;
 
 
     // Construtor
@@ -33,11 +34,13 @@ public class Contrato {
 
     // Método para obter descriçao da instacia/objeto
     public String descreveContrato() {
-        return "\nmain.java.com.lingprogram.Cliente: " + cliente.getNome() + " " + cliente.getSobrenome() + " – main.java.com.lingprogram.Servico: " + servico.getDescricao() +
-                "\nmain.java.com.lingprogram.Funcionario responsavel: " + funcionarioResponsavel.getNome() + " " + funcionarioResponsavel.getSobrenome() +
+        return "\nCliente: " + cliente.getNome() + " " + cliente.getSobrenome() + " – Servico: " + servico.getDescricao() +
+                "\nFuncionario responsavel: " + funcionarioResponsavel.getNome() + " " + funcionarioResponsavel.getSobrenome() +
                 "\nAno do contrato: " + getAnoContrato() +
                 "\nMes do contrato: " + getMesContrato() +
-                "\nCodigo do contrato: " + getCodigoContrato();
+                "\nCodigo do contrato: " + getCodigoContrato() +
+                "\nValor Orcado em Contrato (R$): " + valorOrcadoEmContrato() +
+                "\nValor do Contrato (R$): " + valorPagoEmContrato();
     }
 
     public int getAnoContrato() {
@@ -55,4 +58,12 @@ public class Contrato {
     public String getCodigoContrato() {
         return codigoContrato;
     }
+
+    public double valorOrcadoEmContrato(){
+        return servico.calculaOrcamentoServico(servico);
+    }
+    public double valorPagoEmContrato(){
+        return servico.calculaValorPagoServico(servico);
+    }
+
 }
