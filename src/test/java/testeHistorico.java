@@ -2,6 +2,8 @@ package test.java;
 import main.java.com.lingprogram.*;
 
 import java.io.LineNumberInputStream;
+import java.io.SyncFailedException;
+import java.util.List;
 
 public class testeHistorico {
     public static void main(String[] args) {
@@ -22,14 +24,24 @@ public class testeHistorico {
         Historico historico = new Historico();
 
         Contrato contrato1 = new Contrato(cliente1, servico1, funcionario1);
+        historico.addContrato(contrato1);
+
         Contrato contrato2 = new Contrato(cliente1, servico2, funcionario1);
-        Contrato contrato3 = new Contrato(cliente1, servico1, funcionario1);
+        historico.addContrato(contrato2);
 
-        historico.adicionaContrato(contrato1);
-        historico.adicionaContrato(contrato2);
-        historico.adicionaContrato(contrato3);
+        Contrato contrato3 = new Contrato(cliente1, servico1, funcionario2);
+        historico.addContrato(contrato3);
 
-        System.out.println(historico.detalhaContrato());
+        List<Contrato> listaContratos = historico.getContratos();
 
+        // loop que Descreve Contratos adicionados no Historico de contratos
+        for(Contrato contrato : listaContratos){
+            System.out.println(contrato.descreveContrato());
+        }
+
+//        System.out.println(historico.detalhaContratoHistorico(contrato1));
+
+        System.out.println(historico.calculaFaturamentoPrevisto(historico));
+        System.out.println(historico.calculaFaturamentoPago(historico));
     }
 }

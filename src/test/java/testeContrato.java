@@ -22,12 +22,12 @@ public class testeContrato {
         Contrato contrato1 = new Contrato(cliente1, servico1, funcionario1);
         Contrato contrato2 = new Contrato(cliente1, servico2, funcionario1);
 
-        Contrato contrato3 = new Contrato(cliente1, servico1, funcionario1);
-        contrato3.setAnoContrato(2022);
+        Contrato contrato3 = new Contrato(cliente1, servico1, funcionario2);
+//        contrato3.setAnoContrato(2022);
 
-//        System.out.println(contrato1.descreveContrato());
-//        System.out.println(contrato2.descreveContrato());
-//        System.out.println(contrato3.descreveContrato());
+        System.out.println(contrato1.descreveContrato());
+        System.out.println(contrato2.descreveContrato());
+        System.out.println(contrato3.descreveContrato());
 //
 //        System.out.println(servico1.getCodServico());
 //        System.out.println(servico2.getCodServico());
