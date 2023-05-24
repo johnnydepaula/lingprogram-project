@@ -7,6 +7,8 @@ public class Funcionario {
     private Boolean sexo;
     private String codFuncionario;
     private static int numCodFuncionario = 0;
+
+
     public Funcionario(String nome, String sobrenome, String email, boolean sexo){
         this.nome = nome;
         this.sobrenome = sobrenome;
