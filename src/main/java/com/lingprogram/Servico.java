@@ -5,9 +5,6 @@ public class Servico {
     private double valorCobradoHoraServico;
     private int horasPrevistas;
     private int horasTrabalhadas;
-
-
-    // Codigo do main.java.com.lingprogram.Servico
     private String codServico;
     private static int numCodServico = 0;
 
@@ -23,7 +20,7 @@ public class Servico {
 
     // getters & setters
     public String getDescricao() {
-        return descricao;
+        return new String(this.descricao);
     }
 
     public void setDescricao(String descricao) {
@@ -31,7 +28,8 @@ public class Servico {
     }
 
     public double getValorCobradoHoraServico() {
-        return valorCobradoHoraServico;
+        String strValorCobradoHoraServico = String.valueOf(this.valorCobradoHoraServico);
+        return Double.parseDouble(strValorCobradoHoraServico);
     }
 
     public void setValorCobradoHoraServico(double valorCobradoHoraServico) {
@@ -39,7 +37,8 @@ public class Servico {
     }
 
     public int getHorasPrevistas() {
-        return horasPrevistas;
+        String strHorasPrevistas = String.valueOf(this.horasPrevistas);
+        return Integer.parseInt(strHorasPrevistas);
     }
 
     public void setHorasPrevistas(int horasPrevistas) {
@@ -47,7 +46,8 @@ public class Servico {
     }
 
     public int getHorasTrabalhadas() {
-        return horasTrabalhadas;
+        String strHorasTrabalhadas = String.valueOf(this.horasTrabalhadas);
+        return Integer.parseInt(strHorasTrabalhadas);
     }
 
     public void setHorasTrabalhadas(int horasTrabalhadas) {
@@ -55,27 +55,21 @@ public class Servico {
     }
 
     public String getCodServico() {
-        return codServico;
+        return new String(codServico);
     }
 
-    public void setCodServico(String codServico) {
-        this.codServico = codServico;
+    public double calculaOrcamentoServico(){
+        return getValorCobradoHoraServico()*getHorasPrevistas();
     }
 
-    public static int getNumCodServico() {
-        return numCodServico;
+    public double calculaValorPagoServico(){
+        return getValorCobradoHoraServico()*getHorasTrabalhadas();
     }
 
-    public static void setNumCodServico(int numCodServico) {
-        Servico.numCodServico = numCodServico;
-    }
-
-    public double calculaOrcamentoServico(Servico servico){
-        return servico.getValorCobradoHoraServico()*servico.getHorasPrevistas();
-    }
-
-    public double calculaValorPagoServico(Servico servico){
-        return servico.getValorCobradoHoraServico()*getHorasTrabalhadas();
+    public String toString(){
+        return "\nDescricao: "+getDescricao()+"\nValor Cobrado Hora-Servico (R$): "+getValorCobradoHoraServico()+
+                "\nHoras Previstas: "+getHorasPrevistas()+"\nHoras Trabalhadas: "+getHorasTrabalhadas()+
+                "\nCodigo do Servico: "+getCodServico();
     }
 }
 

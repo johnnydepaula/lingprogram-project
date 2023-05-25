@@ -1,6 +1,6 @@
 package main.java.com.lingprogram;
 
-public class Funcionario {
+public abstract class Funcionario {
     private String nome;
     private String sobrenome;
     private String email;
@@ -8,8 +8,7 @@ public class Funcionario {
     private String codFuncionario;
     private static int numCodFuncionario = 0;
 
-
-    public Funcionario(String nome, String sobrenome, String email, boolean sexo){
+    public Funcionario(String nome, String sobrenome, String email, Boolean sexo){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
@@ -21,7 +20,7 @@ public class Funcionario {
 
     // Gets e Sets
     public String getNome() {
-        return nome;
+        return new String(this.nome);
     }
 
     public void setNome(String nome) {
@@ -29,7 +28,7 @@ public class Funcionario {
     }
 
     public String getSobrenome() {
-        return sobrenome;
+        return new String(this.sobrenome);
     }
 
     public void setSobrenome(String sobrenome) {
@@ -37,7 +36,7 @@ public class Funcionario {
     }
 
     public String getEmail() {
-        return email;
+        return new String (this.email);
     }
 
     public void setEmail(String email) {
@@ -45,14 +44,24 @@ public class Funcionario {
     }
 
     public Boolean getSexo() {
-        return sexo;
+        Boolean copiaSexo = this.sexo;
+        return copiaSexo;
     }
 
     public void setSexo(Boolean sexo) {
         this.sexo = sexo;
     }
+
+    public String getGenero(){
+        if(getSexo()){
+            return "Masculino";
+        }else{
+            return "Feminino";
+        }
+    }
+
     public String getCodFuncionario() {
-        return codFuncionario;
+        return new String(this.codFuncionario);
     }
 
     public void setCodFuncionario(String codFuncionario) {
@@ -60,10 +69,28 @@ public class Funcionario {
     }
 
     public static int getNumCodFuncionario() {
-        return numCodFuncionario;
+        String strNumCodFuncionario = String.valueOf(numCodFuncionario);
+        return Integer.parseInt(strNumCodFuncionario);
     }
 
     public static void setNumCodFuncionario(int numCodFuncionario) {
         Funcionario.numCodFuncionario = numCodFuncionario;
     }
+
+    public String toString(){
+        return "\nNome: "+getNome()+"\nSobrenome: "+getSobrenome()+"\nEmail: "+getEmail()+
+                "\nSexo: "+getGenero()+"\nCodigo do Funcionario: "+getCodFuncionario();
+    }
+
+    public String getSaudacao() {
+        if(getSexo()) {
+            return "Prezado Senhor " +getNome()+" "+getSobrenome();
+        }else {
+            return "Prezada Senhora " +getNome()+" "+getSobrenome();
+        }
+    }
+
+    public abstract double calculaSalario();
+
+    public abstract String getDescricao();
 }

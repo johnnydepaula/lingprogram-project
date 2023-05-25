@@ -31,9 +31,36 @@ public class Contrato {
         }
         codigoContrato = getAnoContrato() + "-" + count;
     }
+    public int getAnoContrato() {
+        String strAnoContrato = String.valueOf(this.anoContrato);
+        int copia = Integer.parseInt(strAnoContrato);
+        return copia;
+    }
+
+    public int getMesContrato() {
+        String strMesContrato = String.valueOf(this.mesContrato);
+        int copia = Integer.parseInt(strMesContrato);
+        return copia;
+    }
+
+    public String getCodigoContrato() {
+        return new String(codigoContrato);
+    }
+
+    public double valorOrcadoEmContrato(){
+        String strValorOrcadoEmContrato = String.valueOf(servico.calculaOrcamentoServico());
+        double copia = Double.parseDouble(strValorOrcadoEmContrato);
+        return copia;
+    }
+
+    public double valorPagoEmContrato(){
+        String strValorPagoEmContrato = String.valueOf(servico.calculaValorPagoServico());
+        double copia = Double.parseDouble(strValorPagoEmContrato);
+        return copia;
+    }
 
     // Método para obter descriçao da instacia/objeto
-    public String descreveContrato() {
+    public String toString() {
         return "\nCliente: " + cliente.getNome() + " " + cliente.getSobrenome() + " – Servico: " + servico.getDescricao() +
                 "\nFuncionario responsavel: " + funcionarioResponsavel.getNome() + " " + funcionarioResponsavel.getSobrenome() +
                 "\nAno do contrato: " + getAnoContrato() +
@@ -42,28 +69,4 @@ public class Contrato {
                 "\nValor Orcado em Contrato (R$): " + valorOrcadoEmContrato() +
                 "\nValor do Contrato (R$): " + valorPagoEmContrato();
     }
-
-    public int getAnoContrato() {
-        return anoContrato;
-    }
-
-    public void setAnoContrato(int anoContrato) {
-        this.anoContrato = anoContrato;
-    }
-
-    public int getMesContrato() {
-        return mesContrato;
-    }
-
-    public String getCodigoContrato() {
-        return codigoContrato;
-    }
-
-    public double valorOrcadoEmContrato(){
-        return servico.calculaOrcamentoServico(servico);
-    }
-    public double valorPagoEmContrato(){
-        return servico.calculaValorPagoServico(servico);
-    }
-
 }

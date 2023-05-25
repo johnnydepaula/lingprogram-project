@@ -9,7 +9,7 @@ public class Cliente {
     private static int numCodCliente = 0;
 
 
-    public Cliente(String nome, String sobrenome, String email, boolean sexo){
+    public Cliente(String nome, String sobrenome, String email, Boolean sexo){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
@@ -21,7 +21,7 @@ public class Cliente {
 
     // Gets e Sets
     public String getNome() {
-        return nome;
+        return new String(nome);
     }
 
     public void setNome(String nome) {
@@ -29,7 +29,7 @@ public class Cliente {
     }
 
     public String getSobrenome() {
-        return sobrenome;
+        return new String(sobrenome);
     }
 
     public void setSobrenome(String sobrenome) {
@@ -37,7 +37,7 @@ public class Cliente {
     }
 
     public String getEmail() {
-        return email;
+        return new String(email);
     }
 
     public void setEmail(String email) {
@@ -45,30 +45,41 @@ public class Cliente {
     }
 
     public Boolean getSexo() {
-        return sexo;
+        Boolean copiaSexo = this.sexo;
+        return copiaSexo;
     }
 
     public void setSexo(Boolean sexo) {
         this.sexo = sexo;
     }
-    public String getCodCliente() {
-        return codCliente;
+
+    // método para tratar genero obtido através do getSexo()
+    public String getGenero(){
+        if(getSexo()){
+            return "Masculino";
+        }else{
+            return "Feminino";
+        }
     }
 
-    public void setCodCliente(String codCliente) {
-        this.codCliente = codCliente;
+    public String getCodCliente() {
+            return new String(codCliente);
     }
 
     public static int getNumCodCliente() {
         return numCodCliente;
     }
 
-    public static void setNumCodCliente(int numCodCliente) {
-        Cliente.numCodCliente = numCodCliente;
+    public String getSaudacao() {
+        if(getSexo()) {
+            return "Prezado Senhor " + getSobrenome();
+        }else {
+            return "Prezada Senhora " + getSobrenome();
+        }
     }
 
-    public String getCliente(){
+    public String toString(){
         return "\nNome: "+getNome()+"\nSobrenome: "+getSobrenome()+"\nEmail: "+getEmail()+
-                "\nSexo: "+getSexo()+"\nCodigo do main.java.com.lingprogram.Cliente: "+getCodCliente();
+                "\nSexo: "+getGenero()+"\nCodigo do Cliente: "+getCodCliente();
     }
 }
