@@ -29,34 +29,26 @@ public class Contrato {
         } else {
             count = 1;
         }
-        codigoContrato = getAnoContrato() + "-" + count;
+        codigoContrato = anoContrato + "-" + count;
     }
     public int getAnoContrato() {
-        String strAnoContrato = String.valueOf(this.anoContrato);
-        int copia = Integer.parseInt(strAnoContrato);
-        return copia;
+        return this.anoContrato;
     }
 
     public int getMesContrato() {
-        String strMesContrato = String.valueOf(this.mesContrato);
-        int copia = Integer.parseInt(strMesContrato);
-        return copia;
+        return this.mesContrato;
     }
 
     public String getCodigoContrato() {
-        return new String(codigoContrato);
+        return new String(this.codigoContrato);
     }
 
     public double valorOrcadoEmContrato(){
-        String strValorOrcadoEmContrato = String.valueOf(servico.calculaOrcamentoServico());
-        double copia = Double.parseDouble(strValorOrcadoEmContrato);
-        return copia;
+        return this.servico.calculaOrcamentoServico();
     }
 
     public double valorPagoEmContrato(){
-        String strValorPagoEmContrato = String.valueOf(servico.calculaValorPagoServico());
-        double copia = Double.parseDouble(strValorPagoEmContrato);
-        return copia;
+        return this.servico.calculaValorPagoServico();
     }
 
     // Método para obter descriçao da instacia/objeto

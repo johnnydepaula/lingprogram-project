@@ -32,22 +32,5 @@ public class testeContrato {
         System.out.println(contrato1.toString());
         System.out.println(contrato2.toString());
         System.out.println(contrato3.toString());
-
-//        contrato3.setAnoContrato(2022);
-
-//        System.out.println(contrato1.descreveContrato());
-//        System.out.println(contrato2.descreveContrato());
-//        System.out.println(contrato3.descreveContrato());
-//
-//        System.out.println(servico1.getCodServico());
-//        System.out.println(servico2.getCodServico());
-//
-//        System.out.println(funcionario1.getCodFuncionario());
-//        System.out.println(funcionario2.getCodFuncionario());
-//
-//        System.out.println(contrato3.descreveContrato());
-//        System.out.println(contrato3.getAnoContrato());
-//        System.out.println(contrato3.getCodigoContrato());
-//        System.out.println(contrato3.valorOrcadoEmContrato());
     }
 }

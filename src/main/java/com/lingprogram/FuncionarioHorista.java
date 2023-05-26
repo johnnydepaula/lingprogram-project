@@ -3,7 +3,7 @@ package main.java.com.lingprogram;
 public class FuncionarioHorista extends Funcionario{
     private Servico servico;
 
-    public FuncionarioHorista(String nome, String sobrenome, String email, Boolean sexo, Servico servico){
+    public FuncionarioHorista(String nome, String sobrenome, String email, boolean sexo, Servico servico){
         super(nome, sobrenome, email, sexo);
         this.servico = servico;
     }
