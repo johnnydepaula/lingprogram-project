@@ -17,9 +17,9 @@ public class Historico {
         contratos.remove(contrato);
     }
 
-    public void verificaContrato(Historico historico, String codContrato){
+    public void verificaContrato(String codContrato){
         boolean existeContrato = false;
-        List<Contrato> lista = historico.getContratos();
+        List<Contrato> lista = getContratos();
         for(Contrato contrato : lista){
             if(contrato.getCodigoContrato().equals(codContrato)){
                 existeContrato = true;
@@ -42,9 +42,9 @@ public class Historico {
         return contrato.toString();
     }
 
-    public double calculaFaturamentoPrevisto(Historico historico){
+    public double calculaFaturamentoPrevisto(){
         double valorTotal = 0;
-        List<Contrato> lista = historico.getContratos();
+        List<Contrato> lista = getContratos();
 
         for(Contrato contrato : lista){
             valorTotal += contrato.valorOrcadoEmContrato();
@@ -52,9 +52,9 @@ public class Historico {
         return valorTotal;
     }
 
-    public double calculaFaturamentoPago(Historico historico){
+    public double calculaFaturamentoPago(){
         double valorTotal = 0;
-        List<Contrato> lista = historico.getContratos();
+        List<Contrato> lista = getContratos();
 
         for(Contrato contrato : lista){
             valorTotal += contrato.valorPagoEmContrato();

@@ -5,7 +5,7 @@ public class testeServico {
     public static void main(String[] args) {
 
         Servico servico1 = new Servico("Limpeza da fachada do edifício", 1230.00
-                ,4, 3);
+                ,2401, 2401);
         Servico servico2 = new Servico("Pintura do banheiro do edifício", 350.00
                 ,2, 3);
 

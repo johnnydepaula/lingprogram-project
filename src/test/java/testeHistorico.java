@@ -51,7 +51,7 @@ public class testeHistorico {
         System.out.println();
 
         // Verifica Contrato especifico no Historico
-        historico.verificaContrato(historico, "2023-3");
+        historico.verificaContrato("2023-3");
 
         // Removendo um Contrato do Historico
         historico.removeContrato(contrato3);
@@ -63,13 +63,13 @@ public class testeHistorico {
 
         // Detalhando Orcamento e Faturamento total dos Contratos em Historico
         System.out.println("Faturamento Total Previsto dos Contratos em Historico (R$): "
-                +historico.calculaFaturamentoPrevisto(historico));
+                +historico.calculaFaturamentoPrevisto());
 
         System.out.println("Faturamento Total dos Contratos em Historico (R$): "+
-                historico.calculaFaturamentoPago(historico));
+                historico.calculaFaturamentoPago());
 
         System.out.println();
         // Verifica Contrato especifico no Historico
-        historico.verificaContrato(historico, "2023-3");
+        historico.verificaContrato("2023-3");
     }
 }

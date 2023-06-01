@@ -11,8 +11,24 @@ public class Servico {
     public Servico(String descricao, double valorCobradoHoraServico, int horasPrevistas, int horasTrabalhadas){
         this.descricao = descricao;
         this.valorCobradoHoraServico = valorCobradoHoraServico;
-        this.horasPrevistas = horasPrevistas;
-        this.horasTrabalhadas = horasTrabalhadas;
+
+        try{
+            if (horasPrevistas > 2400){
+                throw new IllegalArgumentException("Nao e permitido valores acima de 2400h para Horas Previstas\n");
+            }
+            this.horasPrevistas = horasPrevistas;
+        } catch (IllegalArgumentException e){
+            System.out.println("Erro: "+e.getMessage()); // Fazer o que alem de mostrar aviso??
+        }
+
+        try{
+            if(horasTrabalhadas > 2400){
+                throw new IllegalArgumentException("Nao e permitido valores acima de 2400h para Horas Trabalhadas\n");
+            }
+            this.horasTrabalhadas = horasTrabalhadas;
+        } catch (IllegalArgumentException e){
+            System.out.println("Erro: "+e.getMessage()); // Fazer o que alem de mostrar aviso??
+        }
 
         numCodServico++;
         codServico = "S"+numCodServico;
@@ -28,8 +44,7 @@ public class Servico {
     }
 
     public double getValorCobradoHoraServico() {
-        String strValorCobradoHoraServico = String.valueOf(this.valorCobradoHoraServico);
-        return Double.parseDouble(strValorCobradoHoraServico);
+        return this.valorCobradoHoraServico;
     }
 
     public void setValorCobradoHoraServico(double valorCobradoHoraServico) {
@@ -37,8 +52,7 @@ public class Servico {
     }
 
     public int getHorasPrevistas() {
-        String strHorasPrevistas = String.valueOf(this.horasPrevistas);
-        return Integer.parseInt(strHorasPrevistas);
+        return this.horasPrevistas;
     }
 
     public void setHorasPrevistas(int horasPrevistas) {
@@ -46,8 +60,7 @@ public class Servico {
     }
 
     public int getHorasTrabalhadas() {
-        String strHorasTrabalhadas = String.valueOf(this.horasTrabalhadas);
-        return Integer.parseInt(strHorasTrabalhadas);
+        return this.horasTrabalhadas;
     }
 
     public void setHorasTrabalhadas(int horasTrabalhadas) {
